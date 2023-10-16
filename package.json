@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@ant-design/plots": "^1.2.5",
+    "@types/antd": "^1.0.0",
+    "@types/react-icons": "^3.0.0",
+    "antd": "^5.10.1",
     "framer-motion": "^10.16.4",
     "next": "13.5.4",
     "prettier": "^3.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.11.0"
   },
   "devDependencies": {
     "@types/node": "^20",
