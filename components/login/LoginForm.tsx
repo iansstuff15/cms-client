@@ -6,6 +6,7 @@ import { Button, Col, Divider, Form, Input, Row, Space } from 'antd';
 import { ActionType } from '../../types/modal/modal';
 import { useContext } from 'react';
 import { ModalContext } from '../modal/modal';
+import { theme } from '@/app/theme/theme';
 
 const LoginForm = () => {
   const { showModal } = useContext(ModalContext);
@@ -14,8 +15,8 @@ const LoginForm = () => {
   };
   return (
     <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-      <h1>Welcome Back!</h1>
-      <p>Enter your credentials to login</p>
+      <h1 style={{ color: theme.colorPrimary }}>Welcome Back!</h1>
+      <p>Enter your credentials to start managing your content</p>
       <Button
         shape="round"
         onClick={() => showModal({ type: ActionType.SWITCH_SUB_DOMAIN })}
@@ -62,25 +63,31 @@ const LoginForm = () => {
             Log in
           </Button>
         </Form.Item>
+        <Button type="link">Forgot Password?</Button>
       </Form>
       <Divider>or</Divider>
       <Row gutter={8}>
         <Col span={12}>
-          <Button icon={<FcGoogle size={18} />} block>
+          <Button
+            icon={<FcGoogle size={18} />}
+            block
+            style={{ backgroundColor: 'white', color: 'black' }}
+          >
             Login with Google
           </Button>
         </Col>
         <Col span={12}>
-          <Button block icon={<BsApple size={18} />}>
-            Login with Apple
+          <Button
+            block
+            icon={<BsApple size={18} />}
+            style={{ backgroundColor: 'black', color: 'white' }}
+          >
+            <span>Login with Apple</span>
           </Button>
         </Col>
       </Row>
       <p>
-        Don{"'"}t have an account yet?{' '}
-        <a className="login-form-forgot" href="">
-          Register
-        </a>
+        Don{"'"}t have an account yet? <Button type="link">Register</Button>
       </p>
     </Space>
   );

@@ -1,10 +1,13 @@
-import { Modal } from 'antd';
+import { ButtonProps, Modal } from 'antd';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ModalProvider } from '@/components/modal/modal';
-
+import { ConfigProvider } from 'antd';
 const inter = Inter({ subsets: ['latin'] });
+import type { Color } from 'antd/es/color-picker';
+import { useState } from 'react';
+import { theme, themeConfig } from './theme/theme';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ padding: '1vw', minHeight: '100vh', overflow: 'hidden' }}>
-        <ModalProvider>{children}</ModalProvider>
+        <ConfigProvider theme={themeConfig}>
+          <ModalProvider>{children}</ModalProvider>
+        </ConfigProvider>
       </body>
     </html>
   );

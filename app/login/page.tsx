@@ -1,5 +1,6 @@
 import LoginForm from '@/components/login/LoginForm';
 import { Row, Col } from 'antd';
+import { theme } from '../theme/theme';
 
 export default function Login() {
   return (
@@ -8,14 +9,14 @@ export default function Login() {
         <Col span={12}>
           <div
             style={{
-              background: 'blue',
+              background: theme.colorPrimary,
               height: '100%',
               width: '100%',
               borderRadius: '1rem',
             }}
           ></div>
         </Col>
-        <Col span={12} style={{ padding: '15vh 10em' }}>
+        <Col span={12} style={{ padding: '10vh 10em' }}>
           <LoginForm />
         </Col>
       </Row>
