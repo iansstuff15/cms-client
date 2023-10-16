@@ -2,8 +2,3 @@
   margin: 0;
   padding: 0;
 }
-span {
-  display: inline-flex;
-  margin-bottom: 8px;
-  justify-items: center;
-}
