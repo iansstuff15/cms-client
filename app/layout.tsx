@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ padding: '1vw', minHeight: '100vh', overflow: 'hidden' }}>
         <ModalProvider>{children}</ModalProvider>
       </body>
     </html>

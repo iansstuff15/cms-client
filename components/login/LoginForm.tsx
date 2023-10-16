@@ -1,11 +1,9 @@
 'use client';
-import { LockOutlined, UserOutlined, AppleFilled } from '@ant-design/icons';
 import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
 import { MdEmail, MdPassword } from 'react-icons/md';
-import { Button, Checkbox, Col, Divider, Form, Input, Row, Space } from 'antd';
+import { Button, Col, Divider, Form, Input, Row, Space } from 'antd';
 import { ActionType } from '../../types/modal/modal';
-import SwitchSubDomain from '../modal/switchSubDomain/swtichSubDomain';
 import { useContext } from 'react';
 import { ModalContext } from '../modal/modal';
 
