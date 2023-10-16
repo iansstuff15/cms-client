@@ -4,8 +4,13 @@ import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
 import { MdEmail, MdPassword } from 'react-icons/md';
 import { Button, Checkbox, Col, Divider, Form, Input, Row, Space } from 'antd';
+import { ActionType } from '../../types/modal/modal';
+import SwitchSubDomain from '../modal/switchSubDomain/swtichSubDomain';
+import { useContext } from 'react';
+import { ModalContext } from '../modal/modal';
 
 const LoginForm = () => {
+  const { showModal } = useContext(ModalContext);
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
   };
@@ -13,7 +18,12 @@ const LoginForm = () => {
     <Space direction="vertical" size="middle" style={{ width: '100%' }}>
       <h1>Welcome Back!</h1>
       <p>Enter your credentials to login</p>
-      <Button shape="round">cms-client.com</Button>
+      <Button
+        shape="round"
+        onClick={() => showModal({ type: ActionType.SWITCH_SUB_DOMAIN })}
+      >
+        cms-client.com
+      </Button>
       <Form
         name="normal_login"
         className="login-form"
