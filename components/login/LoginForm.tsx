@@ -7,8 +7,9 @@ import { ActionType } from '../../types/modal/modal';
 import { useContext } from 'react';
 import { ModalContext } from '../modal/modal';
 import { theme } from '@/app/theme/theme';
-
+import { useRouter } from 'next/navigation';
 const LoginForm = () => {
+  const router = useRouter();
   const { showModal } = useContext(ModalContext);
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
@@ -59,6 +60,7 @@ const LoginForm = () => {
             block
             htmlType="submit"
             className="login-form-button"
+            onClick={() => router.push('/app/dashboard')}
           >
             Log in
           </Button>
